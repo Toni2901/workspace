@@ -9,12 +9,13 @@ def convert(text):
     words = text.split()
 
     for word in words:
-        # if word in counts:
-        #     counts[word] += 1  
-        # else:
-        #     counts[word] = 1
-        counts[word] = counts.get(word, 0) + 1
+        if word in counts:
+            counts[word] += 1  
+        if word not in counts:
+            counts[word] = 1
     return counts
+    #     counts[word] = counts.get(word, 0) + 1
+        
 
 def sort_dict(counts):
     new_list = []
